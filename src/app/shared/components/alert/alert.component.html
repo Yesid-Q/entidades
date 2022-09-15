@@ -1,0 +1,7 @@
+
+<ng-container *ngIf="alertService.message | async as alert">
+    <div *ngIf="alert.show" class="alert" role="alert" ngClass="{{ cssClass(alert.type) }}">
+        {{ alert.message | titlecase }}
+        <a class="close" (click)="onRemoveAlert()">&times;</a>
+    </div>
+</ng-container>

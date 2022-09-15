@@ -1,0 +1,53 @@
+:host {
+  --color: var(--color-primary);
+  --color-contrast: var(--color-primary-contrast);
+}
+
+:host ::ng-deep table {
+  & thead > tr {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  & tbody > tr {
+    cursor: pointer;
+    height: 2.2rem;
+    text-align: center;
+    &:hover {
+      background-color: #DEDEDE;
+    }
+  }
+}
+
+.loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: block;
+  word-break: break-all;
+  overflow: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 30%);
+  height: 85%;
+}
+
+.table-header {
+  height: 3.5rem;
+  background-color: var(--color);
+  color: var(--color-contrast);
+}
+
+.table-body {
+  font-size: 1rem;
+}
+
+.table-pagination {
+  display: flex;
+  align-items: center;
+  padding: 0 2.4rem;
+  margin-top: 1rem;
+}

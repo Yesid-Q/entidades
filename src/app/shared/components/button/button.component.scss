@@ -1,0 +1,18 @@
+
+button {
+    padding: 12px 24px;
+    border-radius: 12px;
+    background-color: var(--color);
+    color: var(--color-contrast);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 0px solid;
+    transition: background-color 200ms ease-in-out;
+    cursor: pointer;
+    &:active {
+        background-color: var(--color-shade);
+    }
+    &:disabled {
+        opacity: .5;
+    }
+}

@@ -1,0 +1,25 @@
+<div class="w-100 h-100">
+    <div class="w-100 container">
+        <table class="w-100 table">
+            <thead class="table-header">
+                <tr>
+                    <ng-content select="[header]"></ng-content>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <ng-container *ngTemplateOutlet="loading ? loadingTemplate : tableTemplate "></ng-container>
+                <ng-template #loadingTemplate>
+                    <div class="loading">
+                        <app-spinner></app-spinner>
+                    </div>
+                </ng-template>
+                <ng-template #tableTemplate>
+                    <ng-content></ng-content>
+                </ng-template>
+            </tbody>
+        </table>
+    </div>
+    <footer class="table-pagination">
+        <ng-content select="[footer]"></ng-content>
+    </footer>
+</div>

@@ -1,0 +1,22 @@
+
+
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 20px 40px;
+  width: min-content;
+  margin: auto;
+  background-color: var(--color);
+  color: var(--color-contrast);
+  border-radius: 15px;
+
+  & .close {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}

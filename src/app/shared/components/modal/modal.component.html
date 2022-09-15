@@ -1,0 +1,15 @@
+<div class="modal" *ngIf="isOpen">
+    <div>
+        <a class="close" (click)="closeModal.emit()">X</a>
+        <header>
+            <ng-content select="[header]"></ng-content>
+        </header>
+        <section>
+            <ng-content></ng-content>
+        </section>
+        <footer>
+            <ng-content select="[footer]"></ng-content>
+        </footer>
+    </div>
+</div>
+  
