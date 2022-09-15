@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #ac1cd4;
+  --color-primary-contrast: #ffffff;
+  --color-primary-shade: #9719bb;
+
+  --color-secondary: #ff2e89;
+  --color-secondary-contrast: #ffffff;
+  --color-secondary-shade: #e02879;
+
+  --color-success: #2dd36f;
+  --color-success-contrast: #000000;
+  --color-success-shade: #28ba62;
+
+  --color-warning: #ffc409;
+  --color-warning-contrast: #000000;
+  --color-warning-shade: #e0ac08;
+
+  --color-danger: #eb445a;
+  --color-danger-contrast: #ffffff;
+  --color-danger-shade: #cf3c4f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+
+  & label {
+    font-size: 0.9rem;
+  }
+
+  & input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    outline: none;
+    &.ng-touched.ng-invalid,.has-error {
+      border-color: var(--color-danger);
+      color: var(--color-danger);
+    }
+    &:focus {
+      box-shadow: 0px 0px 5px currentColor;
+    }
+  }
+}
+
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.selected {
+  background-color: #b3fffd;
+  font-weight: 400;
+}
+
+.m-auto {
+  margin: auto;
+}
+.alert-primary {
+  --color: var(--color-primary);
+  --color-contrast: var(--color-primary-contrast);
+  --color-shade: var(--color-primary-shade);
+}
+.alert-success {
+  --color: var(--color-success);
+  --color-contrast: var(--color-success-contrast);
+  --color-shade: var(--color-success-shade);
+}
+.alert-warning {
+  --color: var(--color-warning);
+  --color-contrast: var(--color-warning-contrast);
+  --color-shade: var(--color-warning-shade);
+}
+.alert-danger {
+  --color: var(--color-danger);
+  --color-contrast: var(--color-danger-contrast);
+  --color-shade: var(--color-danger-shade);
+}
+
+.entity-modal {
+  --width: 500px;
+  --height: 600px;
+}
