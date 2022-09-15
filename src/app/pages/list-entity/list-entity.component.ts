@@ -29,6 +29,7 @@ export class ListEntityComponent implements OnInit {
   ngOnInit(): void {
     this.loading = true;
     this._entityService.getAll().subscribe((res) => {
+      console.log(res)
       this.listEntity = res;
       this.loading = false;
     });
