@@ -1,0 +1,56 @@
+<div class="content">
+    <div class="table">
+        <app-table [loading]="loading">
+            <ng-container header>
+                <th>
+                    <app-button (click)="onChangeFilterOrder('name')">
+                        Nombre Entidad
+                        <span *ngIf="filterField === 'name'">
+                            {{ asc ? '🡫' : '🡡' }}
+                        </span>
+                    </app-button>
+                </th>
+                <th>Numero Entidad</th>
+                <th>
+                    <app-button (click)="onChangeFilterOrder('expirationDate')">
+                        Fecha Expiracion
+                        <span *ngIf="filterField === 'expirationDate'">
+                            {{ asc ? '🡫' : '🡡' }}
+                        </span>
+                    </app-button>
+                </th>
+                <th>Nombre Contacto</th>
+                <th>Correo Contacto</th>
+                <th>Direccion Ip</th>
+                <th>Acciones</th>
+            </ng-container>
+            <tr *ngFor="let entity of listEntity | filter: filterField : asc; trackBy:trackByEntities">
+                <td>{{ entity.name | titlecase }}</td>
+                <td>{{ entity.identificationNumber }}</td>
+                <td>{{ entity.expirationDate | date }}</td>
+                <td>{{ entity.contactName | titlecase }}</td>
+                <td>{{ entity.contactMail | lowercase }}</td>
+                <td>{{ entity.ipAddress }}</td>
+                <td class="d-flex">
+                    <app-button color="warning" [disabled]="disabled" (click)="openModal(entity)">
+                        Editar
+                    </app-button>
+                    <app-button color="danger" [disabled]="disabled" (click)="onDeleteEntity(entity.entityId)">
+                        Eliminar
+                    </app-button>
+                </td>
+            </tr>
+        </app-table>
+    </div>
+</div>
+
+<app-modal [isOpen]="modal" class="entity-modal" (closeModal)="closeModal()">
+    <h1 header>
+        Editar Entidad
+    </h1>
+    <app-form-entity
+        [valueEntity]="editEntity"
+        (saveEntity)="onEditEntity($event)"
+        (closeModal)="closeModal()"
+    ></app-form-entity>
+</app-modal>

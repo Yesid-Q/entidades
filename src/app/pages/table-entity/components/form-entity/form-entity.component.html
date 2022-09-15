@@ -1,0 +1,40 @@
+<form [formGroup]="formEntity">
+    <div>
+        <label>Nombre Entidad</label>
+        <input formControlName="name" type="text">
+        <span></span>
+    </div>
+    <div>
+        <label>Numero Entidad</label>
+        <input formControlName="identificationNumber" type="text">
+        <span></span>
+    </div>
+    <div>
+        <label>Fecha Expiracion</label>
+        <input formControlName="expirationDate" type="date">
+        <span></span>
+    </div>
+    <div>
+        <label>Nombre Contacto</label>
+        <input formControlName="contactName" type="text">
+        <span></span>
+    </div>
+    <div>
+        <label>Correo Contacto</label>
+        <input formControlName="contactMail" type="text">
+        <span></span>
+    </div>
+    <div>
+        <label>Direccion Ip</label>
+        <input formControlName="ipAddress" type="text">
+        <span></span>
+    </div>
+    <div>
+        <app-button color="warning">
+            Editar
+        </app-button>
+        <app-button color="danger" (click)="closeModal.emit()">
+            Cerrar
+        </app-button>
+    </div>
+</form>

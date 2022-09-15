@@ -1,0 +1,21 @@
+<div class="content">
+    <div class="table">
+        <app-table [loading]="loading">
+            <ng-container header>
+                <th> Nombre </th>
+            </ng-container>
+            <tr 
+                [ngClass]="{ 'selected' : entity.check }"
+                *ngFor="let entity of listEntity; trackBy:trackByEntities"
+                (click)="onSelectedEntity(entity)"
+            >
+                <td>{{ entity.name | titlecase }}</td>
+            </tr>
+            <div footer class="m-auto">
+                <app-button (click)="onGenerateTable()">
+                    Generar Tabla
+                </app-button>
+            </div>
+        </app-table>
+    </div>
+</div>
